@@ -1,0 +1,34 @@
+// Example creating a list and filling it with items
+//  and selecting each item once
+ 
+console.time('class');
+var list = $('#list');
+var items = '<ul>';
+ 
+for (i=0; i<1000; i++) {
+    items += '<li class="item' + i + '">item</li>';
+}
+ 
+items += '</ul>';
+list.html (items);
+ 
+for (i=0; i<1000; i++) {
+    var s = $('.item' + i);
+}
+console.timeEnd('class');
+ 
+console.time('id');
+var list = $('#list');
+var items = '<ul>';
+ 
+for (i=0; i<1000; i++) {
+    items += '<li id="item' + i + '">item</li>';
+}
+ 
+items += '</ul>';
+list.html (items);
+ 
+for (i=0; i<1000; i++) {
+    var s = $('#item' + i);
+}
+console.timeEnd('id');

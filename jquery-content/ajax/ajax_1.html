@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="div1">Hello and Welcome to jQuery</div>
+        <button type="button">Click Me!</button>
+    
+    </body>
+</html>
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script>
+    $(document).ready(function(){
+        console.log("hello");
+        $("button").click(function() {
+        // data path
+            $.ajax({url: "demo_ajax_load.txt",type:'GET',success:function(result) {
+                setTimeout(function(){
+                    console.log(result);
+                },1000);
+                
+        // get Result
+                //$("#div1").html(result);
+            },error:function(){
+                
+            }});
+            console.log("outside ajax");
+            
+        });
+    });
+
+    
+</script>
