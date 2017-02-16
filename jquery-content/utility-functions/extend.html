@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+    * {
+        font-family: Arial;
+    }
+    div {
+        color: green;
+        font-size: 22px;
+        padding: 0 20px;
+    }
+    span {
+        color: red;
+        font-size: 22px;
+        padding: 0 20px;
+        display: block;
+    }
+    p {
+        color: grey;
+        font-size: 22px;
+        padding: 0 20px;
+    }
+</style>
+</head>
+<body>
+<div id="log"></div>
+<script>
+    var firstItem = {
+    apple: 0,
+    banana: { weight: 52, price: 100 },
+    cherry: 97
+    };
+    var secondItem = {
+    banana: { price: 200 },
+    durian: 100
+    };
+
+    $.extend( firstItem, secondItem );
+
+    $( "#log" ).append( JSON.stringify( firstItem ) );
+</script>
+</body>
+</html>
+

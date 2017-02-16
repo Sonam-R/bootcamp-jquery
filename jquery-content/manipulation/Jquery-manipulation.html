@@ -1,0 +1,136 @@
+<html>
+<head>
+    <title>
+        JQUERY BOOTCAMP
+    </title>
+    <style>
+        .division {
+            float: left;
+            width: 98%;
+            height: 50px;
+            border: 2px solid;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .inputDiv {
+            float: left;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .inputDiv label {
+            font-size: 20px;
+        }
+
+        .inputDiv input[type=text] {
+            height: 38px;
+            width: 400px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .inputDiv input[type=button] {
+            background: #3DC4E6;
+            border: 2px solid;
+            height: 38px;
+            width: 121px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .white {
+            background-color: white;
+        }
+
+        .grey {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+<div class="division blue" id="blue">
+    <p><b>I AM FIRST DIVISION</b></p>
+</div>
+<div class="division red" id="red">
+    <p><b>I AM SECOND DIVISION</b></p>
+</div>
+<div class="division white" id="white">
+    <p><b>I AM THIRD DIVISION</b></p>
+</div>
+<div class="division grey" id="grey">
+    <p><b>I AM FOURTH DIVISION</b></p>
+</div>
+<div clas-s="inputDiv">
+    <input type="button" id="addNode" value="APPEND NODE"></input>
+    <input type="button" id="preNode" value="PREPEND NODE"></input>
+    <input type="button" id="remNode" value="REMOVE BLUE"></input>
+    <input type="button" id="empNode" value="EMPTY BLUE"></input>
+    <!--<input type="button" id="unwrapNode" value="UNWRAP BLUE"></input>-->
+    <input type="button" id="repNode" value="REPLACE BLUE"></input>
+    <input type="button" id="addClass" value="ADD CLASS"></input>
+    <input type="button" id="removeClass" value="REMOVE CLASS"></input>
+    <input type="button" id="toggleClass" value="TOGGLE CLASS"></input>
+    <input type="button" id="getWidth" value="GET WIDTH"></input>
+    <input type="button" id="getPosition" value="GET POSITION"></input>
+    <input type="button" id="animatePosition" value="ANIMATE"></input>
+</div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var node='<div class="division grey" id="grey"> <p><b>I AM FOURTH DIVISION</b></p> </div>';
+        $('#addNode').on("click", function () {
+            $('body').append(node);
+        });
+
+        $('#preNode').on("click", function () {
+            $('body').prepend(node);
+        });
+
+        $('#remNode').on("click", function () {
+            $('#blue').remove();
+        });
+        $('#empNode').on("click", function () {
+            $('#blue').empty();
+        });
+        $('#unwrapNode').on("click", function () {
+            $('#blue p').unWrap();
+        });
+        $('#repNode').on("click", function () {
+            $('#blue').replaceWith(node);
+        });
+        $('#addClass').on("click", function () {
+            $('#blue').addClass('grey');
+        });
+        $('#removeClass').on("click", function () {
+            $('#blue').removeClass('grey');
+        });
+        $('#toggleClass').on("click", function () {
+            $('#blue').toggleClass('blue');
+        });
+        $('#getWidth').on("click", function () {
+            alert("WIDTH OF BLUE DIV IS:-" + $('#blue').width());
+            alert("HEIGHT OF BLUE DIV IS:-" + $('#blue').height());
+        });
+        $('#getPosition').on("click", function () {
+            var p=$('#blue').position();
+            alert("TOP POSITION:" + p.top);
+            alert("LEFT POSITION:" + p.left);
+        });
+        $('#animatePosition').on("click", function () {
+            $("#blue").animate({ height: 'toggle'});
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+    * {
+        font-family: Arial;
+    }
+    div {
+        color: green;
+        font-size: 22px;
+        padding: 0 20px;
+    }
+</style>
+</head>
+<body>
+Is 'window' a window? <b></b>
+<script>
+    $( "b" ).append( "" + $.isWindow( window ) );
+</script>
+</body>
+</html>
+

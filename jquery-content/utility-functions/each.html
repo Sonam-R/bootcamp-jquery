@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var employee = ['John', 'Alek', 'Edwin', 'Phil', 'Mark'];
+        $.each(employee, function (index, value) {
+            console.log(value)
+        })
+
+//        var employee = $('.employee').children();
+//        $.each(employee, function (index) {
+//            alert(index + ": " + $(this).text());
+//        })
+    });
+
+</script>
+</head>
+<body>
+    <ul class="employee" style="display: none">
+        <li>John</li>
+        <li>Alek</li>
+        <li>Edwin</li>
+        <li>Phil</li>
+        <li>Mark</li>
+    </ul>
+</body>
+</html>
+

@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>
+        JQUERY BOOTCAMP
+    </title>
+    <style>
+        .division {
+            float: left;
+            width: 98%;
+            height: 50px;
+            border: 2px solid;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .inputDiv {
+            float: left;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .inputDiv label {
+            font-size: 20px;
+        }
+
+        .inputDiv input[type=text] {
+            height: 38px;
+            width: 400px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .inputDiv input[type=button] {
+            background: #3DC4E6;
+            border: 2px solid;
+            height: 38px;
+            width: 100px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+        .white{
+            background-color: white;
+        }
+        .grey{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+<div class="division blue" id="blue">
+    <p><b>I AM FIRST DIVISION</b></p>
+</div>
+<div class="division red" id="red">
+    <p><b>I AM SECOND DIVISION</b></p>
+</div>
+<div class="division white" id="white">
+    <p><b>I AM THIRD DIVISION</b></p>
+</div>
+<div class="division grey" id="grey">
+    <p><b>I AM FOURTH DIVISION</b></p>
+</div>
+<div class="inputDiv">
+    <label>NAME:</label>
+    <input type="text" id="inputBox"/>
+    <input type="button" value="SUBMIT" id="button"/>
+    <input type="button" value="CLEAR" id="clear"/>
+    <div id="status">
+
+    </div>
+</div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        console.log("DOCUMENT IS READY FOR MANIPULATION");
+        $(".division").hover(function () {
+            $(this).css("background-color", "yellow");
+        }, function () {
+            $(this).css("background-color", "pink");
+        }).click(function () {
+            $(this).find('p').toggle();
+        });
+        $('#inputBox').on('change', function (e) {
+            alert('HEY!!!!!! I GOT CHANGED');
+        }).on('keydown', function (e) {
+            $('#status').append('<p>KEY DOWN FIRED BUDDY !!!!!</p>');
+        }).on('keyup', function (e) {
+            $('#status').append('<p>KEY UP FIRED BUDDY !!!!!</p>');
+        }).on('keypress', function (e) {
+            $('#status').append('<p>KEY PRESS FIRED BUDDY !!!!!</p>');
+        });
+        $('#button').on('click', function (e) {
+            $(".division").find('p').html("<b>SUBMIT GOT CLICKED !!!</b>");
+        }).on('dblclick', function (e) {
+            $(".division").find('p').html("<b>SUBMIT GOT DOUBLE CLICKED !!!</b>");
+        });
+        $('#clear').on('click', function (e) {
+            $("#status").html("");
+        });
+    });
+</script>
+</body>
+</html>
