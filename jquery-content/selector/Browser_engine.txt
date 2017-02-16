@@ -1,0 +1,7 @@
+How Rendering engine works?
+1. Load the content of the requested document.
+2. Parse HTML to construct the DOM tree. // $(function(){ });
+3. Create Render tree on behalf  of DOM tree.
+4. Create layout out of render tree.
+5. Paint the render tree. $('window').load(function(){ });
+

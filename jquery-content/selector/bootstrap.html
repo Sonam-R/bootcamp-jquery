@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+    <div id="div1">
+        Welcome to To The New
+    </div>
+    
+    <input type="text" value="hello"/>
+    <input type="text" value="TTN"/>
+    <input type="email" value="sandeep.vashisth@tothenew.com"/>
+
+    <img class="img" src="images.jpg" alt="">
+    <button id="button1">click me</button>
+
+    <script>
+        // window.onload=function(){
+        //     //for all modern browser
+        //     if(document.addEventListener){
+        //         document.getElementById('button1').addEventListener('click',clickHandler);
+        //     }else{
+        //         //IE 10 and lower version
+        //        document.getElementById('button1').attachEvent('click',clickHandler);
+        //     }
+
+        //     function clickHandler(){
+        //         alert('hello');
+        //     }
+
+        // };
+
+
+        // $(function(){
+        //         $('#button1').click(function(){
+        //                 alert("jquery hello");
+        //         });
+        // });
+
+
+        $(document).ready(function() {
+        // executes when HTML-Document is loaded and DOM is ready
+             alert("document is ready");
+        });
+
+
+        $(window).load(function() {
+        // executes when complete page is fully loaded, including all frames, objects and images
+             alert("window is loaded");
+        });
+
+
+    </script>
+</body>
+</html>

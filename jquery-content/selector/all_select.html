@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="container">
+    <h1>All selector</h1>
+    <h1>All selector 2</h1>
+    <p class="intro" name="unorder">Welcome to To The New</p>
+    <p>We build and manage disruptive web products.</p>
+    <p>Who is your favourite:</p>
+    <ul id="choose" name="unorder">
+        <li>java</li>
+        <li>Javascript</li>
+        <li>c++</li>
+    </ul>
+ </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+       // $("#container:first").css("background-color", "yellow");
+       console.log( $("#container:last").css("background-color", "yellow"));
+    });
+    </script>
+</body>
+</html>
